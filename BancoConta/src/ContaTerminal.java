@@ -35,25 +35,30 @@ public class ContaTerminal {
         System.out.printf("\n---------------------------------------------\n MENU PRINCIPAL .\n\n\n Digite 1 para ver os dados da conta\n\n Digite 2 para realizar um depósito\n\n Digite 3 para realizar um saque\n\nDigite a opção desejada: ", conta.name);
         int choice = scanner.nextInt();
 
-        if(choice == 1){
-            showInfo(conta);
+        switch(choice){
+            case 1:{
+                showInfo(conta);
             askToContinue(conta);
-        }else if(choice == 2){
-            System.out.println("---------------------------------------------\nDigite o valor que deseja depositar na sua conta: ");
+            }
+            case 2:{
+                System.out.println("---------------------------------------------\nDigite o valor que deseja depositar na sua conta: ");
             float value = scanner.nextFloat();
             conta.deposit(value);
            askToContinue(conta);
-        }else if(choice == 3){
-            System.out.printf("---------------------------------------------\nDigite um valor de até %.2f que deseja resgatar da sua conta\n Valor desejado: ", conta.getAmount());
-            float value = scanner.nextFloat();
-            if(value > conta.getAmount()){
-                System.err.println("O valor de saque tem que ser menor que o saldo na conta!");
-                askToContinue(conta);
-            }else{
-                conta.withdraw(value);
-                askToContinue(conta);
+            }
+            case 3:{
+                System.out.printf("---------------------------------------------\nDigite um valor de até %.2f que deseja resgatar da sua conta\n Valor desejado: ", conta.getAmount());
+                float value = scanner.nextFloat();
+                if(value > conta.getAmount()){
+                    System.err.println("O valor de saque tem que ser menor que o saldo na conta!");
+                    askToContinue(conta);
+                }else{
+                    conta.withdraw(value);
+                    askToContinue(conta);
+                }
             }
         }
+        
 
         scanner.close();
     }
@@ -72,4 +77,3 @@ public class ContaTerminal {
         System.out.printf("--------------------------------------------------\nOlá %s! Obrigado por criar uma conta em nosso banco, sua agência é %s, o número da conta %d e seu saldo %.2f\n\n Para realizar um depósito ou saque basta acessar o menu abaixo.", conta.getName(), conta.getAgence(), conta.getAccountNumber(), conta.getAmount());
     }
 }
-
