@@ -38,13 +38,15 @@ public class ContaTerminal {
         switch(choice){
             case 1:{
                 showInfo(conta);
-            askToContinue(conta);
+                askToContinue(conta);
+                break;
             }
             case 2:{
                 System.out.println("---------------------------------------------\nDigite o valor que deseja depositar na sua conta: ");
-            float value = scanner.nextFloat();
-            conta.deposit(value);
-           askToContinue(conta);
+                float value = scanner.nextFloat();
+                conta.deposit(value);
+                askToContinue(conta);
+                break;
             }
             case 3:{
                 System.out.printf("---------------------------------------------\nDigite um valor de até %.2f que deseja resgatar da sua conta\n Valor desejado: ", conta.getAmount());
@@ -56,6 +58,7 @@ public class ContaTerminal {
                     conta.withdraw(value);
                     askToContinue(conta);
                 }
+                break;
             }
         }
         
