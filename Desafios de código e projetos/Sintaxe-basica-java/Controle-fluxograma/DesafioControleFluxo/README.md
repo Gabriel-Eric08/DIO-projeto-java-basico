@@ -1,18 +1,73 @@
-## Getting Started
+# Desafio Controle de Fluxo - DIO
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📌 Sobre o Projeto
+Este projeto foi desenvolvido como parte do desafio da DIO (Digital Innovation One) na trilha de **Java Básico**. Ele consiste em um programa que recebe dois números inteiros como entrada e realiza uma contagem de acordo com a diferença entre eles. Caso o primeiro número seja maior que o segundo, uma exceção personalizada é lançada.
 
-## Folder Structure
+## 🚀 Tecnologias Utilizadas
+- Java 11+
+- IntelliJ IDEA ou qualquer outra IDE compatível
 
-The workspace contains two folders by default, where:
+## 📂 Estrutura do Projeto
+```
+DesafioControleFluxo/
+│── bin/
+│── src/
+│   ├── Contador.java
+│   ├── ParametrosInvalidosException.java
+│── lib/
+│── .vscode/
+│── README.md
+```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## ⚙️ Como Executar
+### **1️⃣ Clonar o Repositório**
+```bash
+git clone https://github.com/seu-usuario/desafio-controle-fluxo.git
+cd desafio-controle-fluxo
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### **2️⃣ Compilar e Executar o Código**
+Se estiver usando o terminal:
+```bash
+javac -d bin src/Contador.java
+java -cp bin Contador
+```
+Ou execute o arquivo `Contador.java` diretamente pela IDE.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 📝 Regras do Programa
+1. O usuário deve inserir dois números inteiros.
+2. Se o primeiro número for **maior** que o segundo, a exceção `ParametrosInvalidosException` será lançada.
+3. Caso contrário, o programa imprimirá uma sequência de números até a diferença entre os valores informados.
 
-## Dependency Management
+## 💻 Exemplo de Entrada e Saída
+### **Entrada:**
+```
+Digite o primeiro parâmetro:
+5
+Digite o segundo parâmetro:
+10
+```
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### **Saída:**
+```
+Imprimindo o número 1
+Imprimindo o número 2
+Imprimindo o número 3
+Imprimindo o número 4
+Imprimindo o número 5
+```
+
+Se o primeiro número for maior:
+```
+Digite o primeiro parâmetro:
+10
+Digite o segundo parâmetro:
+5
+```
+Saída:
+```
+O segundo parâmetro deve ser maior que o primeiro
+```
+
+## 📌 Autor
+Desenvolvido por [Gabriel Eric](https://github.com/Gabriel-Eric08). Sinta-se à vontade para contribuir! 🚀
